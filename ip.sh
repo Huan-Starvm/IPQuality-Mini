@@ -1564,7 +1564,7 @@ function MediaUnlockTest_Gemini(){
     local resultunlocktype=$(Get_Unlock_Type $result1 $result3)
     
     # 尝试访问Gemini官网
-    local response=$(curl $CurlARG -$1 --user-agent "$UA_Browser" -fsL --max-time 10 "https://gemini.google.com" 2>&1)
+    local response=$(curl $CurlARG -$1 --user-agent "$UA_Browser" -fsL --max-time 10 "https://gemini.google.com/app" 2>&1)
     
     if [[ "$response" == "curl"* ]]; then
         gemini[ustatus]="${smedia[bad]}"
@@ -1575,7 +1575,7 @@ function MediaUnlockTest_Gemini(){
     
     # 检查是否被重定向到Google首页（未解锁）
     if [[ "$response" == *"Our systems have detected unusual traffic"* ]] || 
-       [[ "$response" == *"https://www.google.com/"* ]]; then
+       [[ "$response" == *"https://gemini.google.com/"* ]]; then
         gemini[ustatus]="${smedia[no]}"
         gemini[uregion]="${smedia[nodata]}"
         gemini[utype]="${smedia[nodata]}"
@@ -1585,7 +1585,7 @@ function MediaUnlockTest_Gemini(){
     # 检查是否成功访问Gemini
     if [[ "$response" == *"Gemini"* ]] || [[ "$response" == *"Bard"* ]]; then
         gemini[ustatus]="${smedia[yes]}"
-        gemini[uregion]="  [Global]   "
+        gemini[uregion]="  [114514]   "
         gemini[utype]="$resultunlocktype"
     else
         gemini[ustatus]="${smedia[no]}"
