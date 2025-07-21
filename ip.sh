@@ -1748,7 +1748,7 @@ echo "${smail[t]} ${smail[c]} ${smail[m]} ${smail[b]}"
 }
 }
 check_dnsbl(){
-local temp_info="$Font_Cyan$Font_B${sinfo[dnsbl]} $ Font_Suffix"
+local temp_info="$Font_Cyan$Font_B${sinfo[dnsbl]} $Font_Suffix"
 ((ibar_step=95))
 show_progress_bar "$temp_info" $((40-1-${sinfo[ldnsbl]}))&
 bar_pid="$!"&&disown "$bar_pid"
