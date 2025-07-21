@@ -55,7 +55,7 @@ declare -A tiktok
 declare -A disney
 declare -A netflix
 declare -A youtube
--A amazon
+declare -A amazon
 declare -A spotify
 declare -A chatgpt
 declare IPV4
@@ -581,8 +581,6 @@ response=$(curl $CurlARG -s6k --max-time 2 "$p")
 if [[ $? -eq 0 && ! $response =~ error && -n $response ]];then
 IPV6="$response"
 break
-fi
-fi
 }
 hide_ipv6(){
 if [[ -n $1 ]];then
