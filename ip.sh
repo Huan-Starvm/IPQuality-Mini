@@ -2137,7 +2137,7 @@ useNIC=" --interface $iface"
 CurlARG+="$useNIC"
 get_ipv4
 get_ipv6
-is_valid_ipv4
+is_valid_ipv4 $IPV4
 is_valid_ipv6 $IPV6
 [[ $IPV4work -eq 0 && $IPV6work -eq 0 ]]&&ERRORcode=7
 ;;
