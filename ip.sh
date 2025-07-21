@@ -366,7 +366,7 @@ smail[marked]="$Font_Suffix$Font_Yellow已标记 $Font_B"
 smail[blacklisted]="$Font_Suffix$Font_Red黑名单 $Font_B"
 stail[stoday]="今日IP检测量："
 stail[stotal]="；总检测量："
-stail[thanks]="。感谢使用xy系列脚本！"
+stail[thanks]="。感谢使用由Huan魔改的xy系列脚本！"
 stail[link]="$Font_I报告链接：$Font_U"
 ;;
 *)echo -ne "ERROR: Language not supported!"
