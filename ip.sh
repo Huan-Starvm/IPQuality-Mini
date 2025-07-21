@@ -1575,7 +1575,7 @@ function MediaUnlockTest_Gemini(){
     
     # 检查是否被重定向到Google首页（未解锁）
     if [[ "$response" == *"Our systems have detected unusual traffic"* ]] || 
-       [[ "$response" == *"https://gemini.google.com/"* ]]; then
+       [[ "$response" == *"https://gemini.google.com"* ]]; then
         gemini[ustatus]="${smedia[no]}"
         gemini[uregion]="${smedia[nodata]}"
         gemini[utype]="${smedia[nodata]}"
