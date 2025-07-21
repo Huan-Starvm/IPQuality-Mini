@@ -2407,21 +2407,21 @@ media_updates+=".Media |= map(. * { DisneyPlus: { Status: \"$(clean_ansi "${disn
 media_updates+=".Media |= map(. * { Netflix: { Status: \"$(clean_ansi "${netflix[ustatus]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { Youtube: { Status: \"$(clean_ansi "${youtube[ustatus]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { AmazonPrimeVideo: { Status: \"$(clean_ansi "${amazon[ustatus]:-null}")\" } }) | "
-media_updates+=".Media |= map(. * { Spotify: { Status: \"$(clean_ansi "${spotify[ustatus]:-null}")\" } }) | "
+media_updates+=".Media |= map(. * { Gemini: { Status: \"$(clean_ansi "${gemini[ustatus]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { ChatGPT: { Status: \"$(clean_ansi "${chatgpt[ustatus]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { TikTok: { Region: \"$(clean_ansi "${tiktok[uregion]//[][]/}")\" } }) | "
 media_updates+=".Media |= map(. * { DisneyPlus: { Region: \"$(clean_ansi "${disney[uregion]//[][]/}")\" } }) | "
 media_updates+=".Media |= map(. * { Netflix: { Region: \"$(clean_ansi "${netflix[uregion]//[][]/}")\" } }) | "
 media_updates+=".Media |= map(. * { Youtube: { Region: \"$(clean_ansi "${youtube[uregion]//[][]/}")\" } }) | "
 media_updates+=".Media |= map(. * { AmazonPrimeVideo: { Region: \"$(clean_ansi "${amazon[uregion]//[][]/}")\" } }) | "
-media_updates+=".Media |= map(. * { Spotify: { Region: \"$(clean_ansi "${spotify[uregion]//[][]/}")\" } }) | "
+media_updates+=".Media |= map(. * { Gemini: { Region: \"$(clean_ansi "${gemini[uregion]//[][]/}")\" } }) | "
 media_updates+=".Media |= map(. * { ChatGPT: { Region: \"$(clean_ansi "${chatgpt[uregion]//[][]/}")\" } }) | "
 media_updates+=".Media |= map(. * { TikTok: { Type: \"$(clean_ansi "${tiktok[utype]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { DisneyPlus: { Type: \"$(clean_ansi "${disney[utype]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { Netflix: { Type: \"$(clean_ansi "${netflix[utype]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { Youtube: { Type: \"$(clean_ansi "${youtube[utype]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { AmazonPrimeVideo: { Type: \"$(clean_ansi "${amazon[utype]:-null}")\" } }) | "
-media_updates+=".Media |= map(. * { Spotify: { Type: \"$(clean_ansi "${spotify[utype]:-null}")\" } }) | "
+media_updates+=".Media |= map(. * { Gemini: { Type: \"$(clean_ansi "${gemini[utype]:-null}")\" } }) | "
 media_updates+=".Media |= map(. * { ChatGPT: { Type: \"$(clean_ansi "${chatgpt[utype]:-null}")\" } }) | "
 if [[ ${smail[local]} -eq 1 ]];then
 mail_updates+=".Mail |= map(. + { Port25: true }) | "
@@ -2481,7 +2481,7 @@ MediaUnlockTest_DisneyPlus $2
 MediaUnlockTest_Netflix $2
 MediaUnlockTest_YouTube_Premium $2
 MediaUnlockTest_PrimeVideo_Region $2
-MediaUnlockTest_Spotify $2
+MediaUnlockTest_Gemini $2
 OpenAITest $2
 check_mail
 [[ $2 -eq 4 ]]&&check_dnsbl "$IP" 50
