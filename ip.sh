@@ -366,7 +366,7 @@ smail[marked]="$Font_Suffix$Font_Yellow已标记 $Font_B"
 smail[blacklisted]="$Font_Suffix$Font_Red黑名单 $Font_B"
 stail[stoday]="今日IP检测量："
 stail[stotal]="；总检测量："
-stail[thanks]="。感谢使用由Huan魔改的xy系列脚本！"
+stail[thanks]="。感谢使用xy系列脚本！"
 stail[link]="$Font_I报告链接：$Font_U"
 ;;
 *)echo -ne "ERROR: Language not supported!"
@@ -1564,7 +1564,7 @@ function MediaUnlockTest_Gemini(){
     local resultunlocktype=$(Get_Unlock_Type $result1 $result3)
     
     # 尝试访问Gemini官网
-    local response=$(curl $CurlARG -$1 --user-agent "$UA_Browser" -fsL --max-time 10 "https://gemini.google.com/app" 2>&1)
+    local response=$(curl $CurlARG -$1 --user-agent "$UA_Browser" -fsL --max-time 10 "https://gemini.google.com" 2>&1)
     
     if [[ "$response" == "curl"* ]]; then
         gemini[ustatus]="${smedia[bad]}"
@@ -1575,7 +1575,7 @@ function MediaUnlockTest_Gemini(){
     
     # 检查是否被重定向到Google首页（未解锁）
     if [[ "$response" == *"Our systems have detected unusual traffic"* ]] || 
-       [[ "$response" == *"https://gemini.google.com"* ]]; then
+       [[ "$response" == *"https://www.google.com/"* ]]; then
         gemini[ustatus]="${smedia[no]}"
         gemini[uregion]="${smedia[nodata]}"
         gemini[utype]="${smedia[nodata]}"
@@ -1585,7 +1585,7 @@ function MediaUnlockTest_Gemini(){
     # 检查是否成功访问Gemini
     if [[ "$response" == *"Gemini"* ]] || [[ "$response" == *"Bard"* ]]; then
         gemini[ustatus]="${smedia[yes]}"
-        gemini[uregion]="  [114514]   "
+        gemini[uregion]="  [Global]   "
         gemini[utype]="$resultunlocktype"
     else
         gemini[ustatus]="${smedia[no]}"
